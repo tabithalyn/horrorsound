@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(61, 30, 30);
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin: 0;
+}
+
+.soundboard {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+}
+
+.keys {
+    background-color: #fefefe;
+    position: relative;
+    margin: 100px auto;
+    display: flex;
+    align-items: space-between;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 80vw;
+    height: 80%;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.button {
+    border: 0;
+    box-sizing: border-box;
+    background: transparent;
+    width: 0;
+    height: 54px;
+    border-color: transparent transparent transparent #202020;
+    transition: 100ms all ease;
+    cursor: pointer;
+    border-style: solid;
+    border-width: 32px 0px 30px 50px;
+    margin-left: 20px;
+}
+.button.paused {
+    border-style: double;
+    border-width: 0px 0px 0px 50px;
+}
+.button:hover {
+    border-color: transparent transparent transparent #404040;
+}
+  
+.btnContainer {
+    border: 1px solid black;
+    height: 20%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    width: 30%; 
+    text-align: center; 
+    margin: 10px; 
+    padding: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+.info {
+    width: 250px;
+    height: 30px;
+    margin-left: 15px;
+    text-align: left;
+    transition: 0.3s ease-in-out;
+    color: #fefefe;
+    font-size: 20px;
+}
+.btnContainer:hover .info {
+    width: 250px;
+    height: 30px;
+    margin-left: 15px;
+    overflow: hidden;
+    color: #222;
+    transition: 0.3s ease-in-out;
+}
+
+@media screen and (min-width: 825px) and (max-width: 1650px) {
+    .info {
+        width: auto;
+        height: 40px;
+        line-height: 16px;
+        margin-left: 5px;
+        text-align: left;
+        transition: 0.3s ease-in-out;
+        color: #fefefe;
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+    }
+    .btnContainer:hover .info {
+        width: auto;
+        height: 40px;
+        margin-left: 5px;
+        overflow: hidden;
+        color: #222;
+        transition: 0.3s ease-in-out;
+        display: flex;
+        align-items: center;
+    }
+}
+@media screen and (max-width: 824px) {
+    .info {
+        width: auto;
+        height: 40px;
+        line-height: 16px;
+        margin-left: 5px;
+        text-align: left;
+        transition: 0.3s ease-in-out;
+        color: #fefefe;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+    }
+    .btnContainer:hover .info {
+        width: auto;
+        height: 40px;
+        margin-left: 5px;
+        overflow: hidden;
+        color: #222;
+        transition: 0.3s ease-in-out;
+        display: flex;
+        align-items: center;
+    }
+    .btnContainer {
+        height: 15%;
+        width: 40%;
+    }
+    .button {
+        border: 0;
+        box-sizing: border-box;
+        background: transparent;
+        width: 0;
+        height: 15px;
+        border-color: transparent transparent transparent #202020;
+        transition: 100ms all ease;
+        cursor: pointer;
+        border-style: solid;
+        border-width: 20px 0px 20px 30px;
+        margin-left: 5px;
+    }
+    .button.paused {
+        border-style: double;
+        border-width: 0px 0px 0px 30px;
+        height: 30px;
+        width: 0;
+    }
+    .button:hover {
+        border-color: transparent transparent transparent #404040;
+    }
+}
