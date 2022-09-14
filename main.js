@@ -21,11 +21,3 @@ var playAudio = function (filePath) {
 audio.addEventListener("ended", function(){
   currentButton.classList.remove("paused");
 });
-    audio.src = "github.com/tabithalyn/horrorsound/sounds" + filePath;
-    currentButton.classList.toggle("paused") 
-    audioPlaying = true; 
-  }
-
-  currentButton = this;
-  currentButton.classList.toggle("paused")    
-}
