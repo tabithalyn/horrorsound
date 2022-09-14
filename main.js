@@ -1,5 +1,5 @@
-var currentButton;	// global scope track the song playing
-var audioPlaying = false; // global scope toggle audio state on/off
+var currentButton;
+var audioPlaying = false;
 
 var playAudio = function (filePath) {
   if (audioPlaying == false) {
@@ -10,10 +10,14 @@ var playAudio = function (filePath) {
     audioPlaying = false;
   } else if (currentButton != this) {
     audio.src = "/Users/doom/Desktop/coding/projects/soundboard/" + filePath;
-    currentButton.classList.toggle("paused") 
-    audioPlaying = true; 
+    currentButton.classList.toggle("paused");
+    audioPlaying = true;
   }
 
   currentButton = this;
-  currentButton.classList.toggle("paused")    
-} 
+  currentButton.classList.toggle("paused");
+}
+
+audio.addEventListener("ended", function(){
+  currentButton.classList.remove("paused");
+});
