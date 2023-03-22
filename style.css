@@ -9,7 +9,7 @@ font-family: 'Special Elite', cursive;
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
-* {
+*, *::before, *::after {
     box-sizing: border-box;
 }
 
@@ -37,19 +37,26 @@ h1 {
     margin: 0;
 }
 
-.keys {
-    background-color: #fefefe;
-    position: relative;
-    margin: 100px auto;
+.board {
     display: flex;
-    align-items: space-between;
-    justify-content: space-between;
+    align-items: space-around;
+    justify-content: center;
     flex-wrap: wrap;
     flex-direction: row;
-    width: 60vw;
-    height: 80%;
-    border-radius: 20px;
+    margin: 0 auto;
+}
+
+.key {
+    background-color: #fefefe;
+    position: relative;
+    margin: 20px;
+    width: 20vw;
+    height: 10vh;
+    border-radius: 10px;
     padding: 20px;
+}
+.key.active {
+    background-color: #949494;
 }
 
 .button {
@@ -155,7 +162,7 @@ h1 {
         font-size: 50px;
         margin: 45px auto;
     }
-    .keys {
+    .key {
         padding: 10px;
     }
     .info {

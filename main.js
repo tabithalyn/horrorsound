@@ -1,24 +1,25 @@
-var currentButton;
-var audioPlaying = false;
+const SOUND_KEYS = ['a', 's', 'd', 'f', 'g', 'h', 'z', 'x', 'c', 'v', 'b', 'n'];
+const keys = document.querySelectorAll('.key');
 
-var playAudio = function (filePath) {
-  if (audioPlaying == false) {
-    audio.src = "/Users/doom/Desktop/coding/projects/soundboard/" + filePath;
-    // github.com/tabithalyn/horrorsound/sounds
-    audioPlaying = true; 
-  } else if (currentButton == this && audioPlaying == true) {
-    audio.pause();
-    audioPlaying = false;
-  } else if (currentButton != this) {
-    audio.src = "/Users/doom/Desktop/coding/projects/soundboard/" + filePath;
-    currentButton.classList.toggle("paused");
-    audioPlaying = true;
-  }
-
-  currentButton = this;
-  currentButton.classList.toggle("paused");
-}
-
-audio.addEventListener("ended", function(){
-  currentButton.classList.remove("paused");
+keys.forEach(key => {
+  key.addEventListener('click', () => playSound(key));
 });
+
+document.addEventListener('keydown', e => {
+  if (e.repeat) return;
+  const key = e.key;
+  const keyIndex = SOUND_KEYS.indexOf(key);
+
+  if (keyIndex > -1) playSound(keys[keyIndex]);
+});
+
+
+function playSound(key) {
+  const soundAudio = document.getElementById(key.dataset.sound);
+  soundAudio.currentTime = 0;
+  soundAudio.play();
+  key.classList.add('active');
+  soundAudio.addEventListener('ended', () => {
+    key.classList.remove('active');
+  });
+}
